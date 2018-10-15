@@ -205,9 +205,8 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
       \   'less': [ 're!^\s{2}', 're!:\s+' ],
       \   'scss': [ 're!^\s{2}', 're!:\s+' ],
       \   'sass': [ 're!^\s{2}', 're!:\s+' ],
-      \   'vue': [ 're!^\s{2}', 're!:\s+' ],
+      \   'vue': [ 're!^\s{2}', 're!:\s+', '</' ],
       \   'html': [ '</' ],
-      \   'vue': [ '</' ],
       \ }
 
 " commenters
