@@ -58,7 +58,7 @@
 	" highlight all matches for the last used search pattern
 	set hls
 	" highlight the screen column of the cursor (local to window)
-	set cuc
+	" set cuc
 	" highlight the screen line of the cursor (local to window)
 	set cul
 	" highlight spelling mistakes (local to window)
@@ -107,6 +107,10 @@
 	set sw=2
 	"	a <Tab> in an indent inserts 'shiftwidth' spaces
 	set sta
+	"	if non-zero, number of spaces to insert for a <Tab> (local to buffer)
+	set sts=2
+	"	expand <Tab> to spaces in Insert mode (local to buffer)
+	set et
 	"	automatically set the indent of a new line (local to buffer)
 	set ai
 	"	do clever autoindenting (local to buffer)
@@ -129,12 +133,16 @@
 " 26 various
 
 syntax enable
-filetype plugin indent on
+filetype plugin on
 " enable default package for better %
 packadd! matchit
 packadd! justify	" justifying text.
 " open man in new window
 :runtime! ftplugin/man.vim
+
+" autocomplete html && css
+" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 " plugins
 " plug manager
@@ -190,6 +198,17 @@ function! BuildYCM(info)
 endfunction
 
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+
+	" autocomplete css html
+	let g:ycm_semantic_triggers = {
+      \   'css': [ 're!^\s{2}', 're!:\s+' ],
+      \   'less': [ 're!^\s{2}', 're!:\s+' ],
+      \   'scss': [ 're!^\s{2}', 're!:\s+' ],
+      \   'sass': [ 're!^\s{2}', 're!:\s+' ],
+      \   'vue': [ 're!^\s{2}', 're!:\s+' ],
+      \   'html': [ '</' ],
+      \   'vue': [ '</' ],
+      \ }
 
 " commenters
 Plug 'scrooloose/nerdcommenter'
