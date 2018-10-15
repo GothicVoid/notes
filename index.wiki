@@ -1,0 +1,7 @@
+= Void's note =
+
+  * [[TODO]]
+  * [[Ideas]]
+  * [[Vim_tips]]
+  * [[Linux_tips]]
+  * [[Code_Complete_tips]]
