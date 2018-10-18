@@ -240,6 +240,27 @@ Plug 'scrooloose/nerdcommenter'
 	map gcb <Leader>cb
 	map gcu <Leader>cu
 
+  " handle Vue files
+  let g:ft = ''
+  function! NERDCommenter_before()
+    if &ft == 'vue'
+      let g:ft = 'vue'
+      let stack = synstack(line('.'), col('.'))
+      if len(stack) > 0
+        let syn = synIDattr((stack)[0], 'name')
+        if len(syn) > 0
+          exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+        endif
+      endif
+    endif
+  endfunction
+  function! NERDCommenter_after()
+    if g:ft == 'vue'
+      setf vue
+      let g:ft = ''
+    endif
+  endfunction
+
 " delimiter
 Plug 'jiangmiao/auto-pairs'
 
@@ -352,6 +373,9 @@ Plug 'pangloss/vim-javascript'
 
 " Vue
 Plug 'posva/vim-vue'
+
+  " prevent syntax highlighting from stopping working randomly
+  autocmd FileType vue syntax sync fromstart
 
 " Initialize plugin system
 call plug#end()
