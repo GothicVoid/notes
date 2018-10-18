@@ -374,6 +374,9 @@ Plug 'pangloss/vim-javascript'
 " Vue
 Plug 'posva/vim-vue'
 
+  " 
+  let g:vue_disable_pre_processors=1
+
   " prevent syntax highlighting from stopping working randomly
   autocmd FileType vue syntax sync fromstart
 
