@@ -24,7 +24,7 @@
 
 === Visual mode ===
 
-* o, O change end
+* o, O                  change end
 
 === Text objects ===
 
@@ -44,19 +44,19 @@
 
 === A list of files ===
 
-* :next，:next! 编辑参数列表中下一个文件
+* :next，:next!         编辑参数列表中下一个文件
 * :wnext == :w + :next
-* :args 列出所有文件
+* :args                 列出所有文件
 * :previous, :previous!, :wprevious
 * :last, :first
-* :args x x x 编辑x, x, x
+* :args x x x           编辑x, x, x
 
 === Jumping from file to file ===
 
-* CTRL-^ 返回上一个编辑的文件
-* `" 返回离开文件时光标所在处
-* `. 返回上一次改动的位置
-* m[A-Z] 跨文件mark
+* CTRL-^                返回上一个编辑的文件
+* `"                    返回离开文件时光标所在处
+* `.                    返回上一次改动的位置
+* m[A-Z]                跨文件mark
 
 === Viewing a file ===
 
@@ -65,31 +65,31 @@
 
 === Changing the file name ===
 
-* :saveas xxx 文件另存为xxx，之后:w写入的是xxx
-* :file yyy ???
+* :saveas xxx           文件另存为xxx，之后:w写入的是xxx
+* :file yyy             ???
 
 ------------------------------------------------------------------------------
 == Splitting windows ==
 
 === Split a window ===
 
-* CTRL-W w 返回刚才编辑的窗口
-* :close 关闭当前窗口
-* :only 只保留当前窗口
+* CTRL-W w              返回刚才编辑的窗口
+* :close                关闭当前窗口
+* :only                 只保留当前窗口
 
 === Split a window on another file ===
 
-* :new, :vnew 在新窗口打开一个新的空白文件
+* :new, :vnew           在新窗口打开一个新的空白文件
 
 === Window size ===
 
-* :{number}split xxx number为新窗口的宽/高
-* CTRL-W +/- 调节窗口大小
-* {number}CTRL-W _ 设置窗口大小为number
+* :{number}split xxx    number为新窗口的宽/高
+* CTRL-W +/-            调节窗口大小
+* {number}CTRL-W _      设置窗口大小为number
 
 === Vertical splits ===
 
-* CTRL-W h/j/k/l/t/b 在窗口间移动
+* CTRL-W h/j/k/l/t/b    在窗口间移动
 
 === Moving windows ===
 
@@ -98,19 +98,19 @@
 === Viewing differences with vimdiff ===
 
 * vimdiff xxx yyy(shell)
-* zo 打开fold
-* zc 关闭fold
+* zo                    打开fold
+* zc                    关闭fold
 * :diffsplit xxx
-* [c 上一改变
-* ]c 下一改变
-* :diffupdate 更新高亮
-* dp 用当前内容覆盖更改内容
-* do 用未更改内容覆盖当前内容
+* [c                    上一改变
+* ]c                    下一改变
+* :diffupdate           更新高亮
+* dp                    用当前内容覆盖更改内容
+* do                    用未更改内容覆盖当前内容
 
 === Tab pages ===
 
 * :tabedit xxx
-* gt, gT
+* gt, gT                切换tab
 * :tab split
 * :tab+任何打开窗口的命令
 * :tabonly
@@ -122,14 +122,12 @@
 
 === Record and playback commands ===
 
-* {
-*   q{register}
-*   commands
-*   q
-* }
-* @{register}
-* q[A-Z] 往寄存器中追加命令
-* "[A-Z]{op} 往寄存器中追加内容
+* q{register}           向register中记录命令
+* commands              输入各种命令（输入时会执行）
+* q                     结束记录
+* @{register}           执行register中的命令
+* q[A-Z]                往寄存器中追加命令
+* "[A-Z]{op}            往寄存器中追加内容
 
 === Substitution ===
 
@@ -137,26 +135,26 @@
 
 === The global command ===
 
-* :[range]global/{pattern}/{command}(command为:命令)
+* :[range]g/{pattern}/{command}(command为:命令)
 
 === Reading and writing part of a file ===
 
-* :r filename 将filename的内容插入到光标下
-* :[range]r filename 将filename的内容插入到range下
-* :[range]w filename 将range包含的内容写入到filename中
-* :w >> filename 追加
+* :r filename           将filename的内容插入到光标下
+* :[range]r filename    将filename的内容插入到range下
+* :[range]w filename    将range包含的内容写入到filename中
+* :w >> filename        追加
 
 === Formatting text ===
 
-* gq{motion} 根据textwidth选项格式化文本
+* gq{motion}            根据textwidth选项格式化文本
 
 === Using an external program ===
 
-* !{motion}{program} == program < {motion} > {motion}(shell)
-* :{range}!{program} == program < {range} > {range}
-* :r !{program} 将program的输出插入到光标下
-* :w !{program} == program < :w(shell)
-* CTRL-L 重绘屏幕
+* !{motion}{program}    program < {motion} > {motion}(shell)
+* :{range}!{program}    program < {range} > {range}
+* :r !{program}         将program的输出插入到光标下
+* :w !{program}         program < :w(shell)
+* CTRL-L                重绘屏幕
 
 ------------------------------------------------------------------------------
 == Recovering from a crash ==
@@ -180,10 +178,10 @@
 
 === Find a man page ===
 
-* K 在shell中打开光标下单词的man
+* K                     在shell中打开光标下单词的man
 * 加了man.vim插件后：
-*   :Man xxx 在新窗口打开xxx的man
-*   \K 在新窗口打开光标下单词的man
+*   :Man xxx            在新窗口打开xxx的man
+*   <Leader>K           在新窗口打开光标下单词的man
 
 === Trim blanks ===
 
@@ -201,14 +199,14 @@
 
 === Command line window ===
 
-* q: 在新窗口打开命令历史
+* q:                    在新窗口打开命令历史
 
 ------------------------------------------------------------------------------
 == Go away and come back ==
 
 === Executing shell commands ===
 
-* :!command
+* :!command             执行shell命令
 
 === Remembering information; viminfo ===
 
@@ -219,11 +217,11 @@
 *   The buffer list
 *   Global variables
 
-* '0 回到上次离开vim时的状态
-* :oldfiles 显示最近编辑过的文件
-* :e #<2 编辑上面显示的第二个文件
-* :split #<3 你懂的
-* :browse oldfiles 列出最近编辑文件
+* '0                    回到上次离开vim时的状态
+* :oldfiles             显示最近编辑过的文件
+* :e #<2                编辑上面显示的第二个文件
+* :split #<3            你懂的
+* :browse oldfiles      列出最近编辑文件
 * :wviminfo! xxx
 * :rviminfo! xxx
 
@@ -232,26 +230,26 @@
 * session记录的内容由sessionoptions选项决定
 
 * :mksession vimbook.vim 创建session文件
-* :source vimbook.vim 读取session文件
-* vim -S vimbook.vim 启动时读取session文件
+* :source vimbook.vim   读取session文件
+* vim -S vimbook.vim    启动时读取session文件
 
 === Views ===
 
 * view相当于一个窗口的session
 
-* :mkview [1-9] 创建view文件
-* :loadview [1-9] 读取view文件
+* :mkview [1-9]         创建view文件
+* :loadview [1-9]       读取view文件
 * :mkview xxx
 * :loadview xxx
 
 ------------------------------------------------------------------------------
 == Finding the file to edit ==
 
-* :cd  同UNIX的cd，作用到所有非独特窗口
-* :pwd  同UNIX的pwd
-* :lcd  当前窗口独特的目录切换
+* :cd                   同UNIX的cd，作用到所有非独特窗口
+* :pwd                  同UNIX的pwd
+* :lcd                  当前窗口独特的目录切换
 
-* gf  查找光标下文件，查找路径由path选项配置
+* gf                    查找光标下文件，查找路径由path选项配置
 
 ------------------------------------------------------------------------------
 == Editing other files ==
@@ -265,16 +263,16 @@
 
 === Encryption ===
 
-* vim -x file 开始编辑加密文件
-* :set key= 取消加密
-* :X 加密当前文件
+* vim -x file           开始编辑加密文件
+* :set key=             取消加密
+* :X                    加密当前文件
 * swap file和viminfo里的内容并未加密
 
 === Binary files ===
 
-* vim -b file 以二进制形式打开文件 !注意不要增删字符，只能r或R
-* :set display=uhex 用Hex格式显示非打印字符
-* ga 查看光标下字符的值
+* vim -b file           以二进制形式打开文件 !注意不要增删字符，只能r或R
+* :set display=uhex     用Hex格式显示非打印字符
+* ga                    查看光标下字符的值
 * 使用xxd:
   * vim -b file
   * :%!xxd
@@ -285,45 +283,45 @@
 
 === Making correcitons ===
 
-* CTRL-W
-* CTRL-U
+* CTRL-W                删除上一个word
+* CTRL-U                删除一整行
 
 === Completion ===
 
 * Completing specific items:
-  * CTRL-X CTRL-F		file names
-  * CTRL-X CTRL-L		whole lines
-  * CTRL-X CTRL-D		macro definitions (also in included files)
-  * CTRL-X CTRL-I		current and included files
-  * CTRL-X CTRL-K		words from a dictionary
-  * CTRL-X CTRL-T		words from a thesaurus
-  * CTRL-X CTRL-]		tags
-  * CTRL-X CTRL-V		Vim command line
-  * CTRL-N          Next match
-  * CTRL-P          Previous match
+  * CTRL-X CTRL-F	file names
+  * CTRL-X CTRL-L	whole lines
+  * CTRL-X CTRL-D	macro definitions (also in included files)
+  * CTRL-X CTRL-I	current and included files
+  * CTRL-X CTRL-K	words from a dictionary
+  * CTRL-X CTRL-T	words from a thesaurus
+  * CTRL-X CTRL-]	tags
+  * CTRL-X CTRL-V	Vim command line
+  * CTRL-N              Next match
+  * CTRL-P              Previous match
 * Completing code:
   * CTRL-X CTRL-O
 
 === Repeating an insert ===
 
-* CTRL-A repeat last inserted word
-* CTRL-@ repeat last inserted word and exit insert mode
+* CTRL-A                repeat last inserted word
+* CTRL-@                repeat last inserted word and exit insert mode
 
 === Copying from another line ===
 
-* CTRL-Y inserts the character above the cursor
-* CTRL-E inserts the character below the cursor
+* CTRL-Y                inserts the character above the cursor
+* CTRL-E                inserts the character below the cursor
 
 === Inserting a register ===
 
-* CTRL-R {register} inserts the contents of the register
+* CTRL-R {register}     inserts the contents of the register
 * CTRL-R CTRL-R {register} inserts the contents of the register without
-  interpret special words
+                        interpret special words
 
 === Abbreviations ===
 
-* :iab #e <Space>***/    #e + <Space> =  ***/
-* :noreabbrev   不重复扩展
+* :iab #e <Space>***/   #e + <Space> =  ***/
+* :noreabbrev           不重复扩展
 
 === Entering special characters ===
 
@@ -336,8 +334,8 @@
 === Digraphs ===
 
 * CTRL-K xx
-* :digraphs   show all digraphs
-* :digraphs xx xx   map xx to xx
+* :digraphs             show all digraphs
+* :digraphs xx xx       map xx to xx
 
 === Normal mode commands ===
 
@@ -359,22 +357,22 @@
 
 === Dealing with long lines ===
 
-* zh		scroll right
-* 4zh		scroll four characters right
-* zH		scroll half a window width right
-* ze		scroll right to put the cursor at the end
-* zl		scroll left
-* 4zl		scroll four characters left
-* zL		scroll half a window width left
-* zs		scroll left to put the cursor at the start
+* zh		        scroll right
+* 4zh		        scroll four characters right
+* zH		        scroll half a window width right
+* ze		        scroll right to put the cursor at the end
+* zl		        scroll left
+* 4zl		        scroll four characters left
+* zL		        scroll half a window width left
+* zs		        scroll left to put the cursor at the start
 
-* g0		to first visible character in this line
-* g^		to first non-blank visible character in this line
-* gm		to middle of this line
-* g$		to last visible character in this line
+* g0		        to first visible character in this line
+* g^		        to first non-blank visible character in this line
+* gm		        to middle of this line
+* g$		        to last visible character in this line
 
-* gj    move to next screen line
-* gk    move to previous screen line
+* gj                    move to next screen line
+* gk                    move to previous screen line
 
 === Editing tables ===
 
@@ -386,8 +384,97 @@
 ------------------------------------------------------------------------------
 == Repeating ==
 
+=== Repeating with Visual mode ===
+
+* gv                    selects last visual selected area
+
+=== Add and subtract ===
+
+* CTRL-A                光标下数字数值+1
+* [number] CTRL-A       光标下数字数值+number
+* CTRL-X                光标下数字数值-1
+* [number] CTRL-X       光标下数字数值-number
+
+=== Making a change in many files ===
+
+* :argdo {command}      execute command on all files in the argument list
+* :windo                execute command in all windows
+* :bufdo                execute command on all buffers
+* :update               writes the file only if it's changed
+
+=== Using Vim from a shell script ===
+
+* ls | vim -            (shell)edit the output of the 'ls' command
+
 ------------------------------------------------------------------------------
 == Search commands and patterns ==
+
+=== Ignoring case ===
+
+* /\cxxx                忽略大小写，无视设置
+* /\Cxxx                不忽略大小写，无视设置
+
+=== Offsets ===
+
+* /xxx/2                搜索xxx，并将光标定位到匹配处往下2行
+* /xxx/-2               搜索xxx，并将光标定位到匹配处往上2行
+* /xxx/e±number         搜索xxx，并将光标定位到匹配word的末尾±number处
+* /xxx/b±number         搜索xxx，并将光标定位到匹配word的开头±number处
+* //{offset}            用不同offset进行上一次查找
+* //                    不加offset地进行上一次查找
+* ?同/
+
+=== Matching multiple times ===
+
+* *                     match the item before it any number of times
+* \(xxx\)               group xxx into one item
+* \+                    match the item before it more than one time
+* \=                    match an optional item
+* \{n,m}                match an item 'n' to 'm' times inclusive
+* \{,m}                 match an item 0 to 'm' times
+* \{n,}                 match an item more than 'n' times
+* \{n}                  match an item 'n' times
+* \{-}                  match an item as few as possible
+
+=== Alternatives ===
+
+* \|                    or
+* \&                    requires both alternatives match in the same place
+
+=== Character ranges ===
+
+* []
+* [-a-z]
+* [^xxx]
+*       item	matches			equivalent ~
+	\d	digit			[0-9]
+	\D	non-digit		[^0-9]
+	\x	hex digit		[0-9a-fA-F]
+	\X	non-hex digit		[^0-9a-fA-F]
+	\s	white space		[ 	]     (<Tab> and <Space>)
+	\S	non-white characters	[^ 	]     (not <Tab> and <Space>)
+	\l	lowercase alpha		[a-z]
+	\L	non-lowercase alpha	[^a-z]
+	\u	uppercase alpha		[A-Z]
+	\U	non-uppercase alpha	[^A-Z]
+
+=== Character classes ===
+
+*       item	matches				option
+	\i	identifier characters		'isident'
+	\I	like \i, excluding digits
+	\k	keyword characters		'iskeyword'
+	\K	like \k, excluding digits
+	\p	printable characters		'isprint'
+	\P	like \p, excluding digits
+	\f	file name characters		'isfname'
+	\F	like \f, excluding digits
+
+=== Matching a line break ===
+
+* \_{Character ranges}
+* \_.
+* \_{Character classes}
 
 ------------------------------------------------------------------------------
 == Folding ==
