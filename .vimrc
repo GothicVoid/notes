@@ -102,7 +102,7 @@
 " 15 tabs and indenting
 
 	"	number of spaces a <Tab> in the text stands for (local to buffer)
-	set ts=2
+	" set ts=2
 	"	number of spaces used for each step of (auto)indent (local to buffer)
 	set sw=2
 	"	a <Tab> in an indent inserts 'shiftwidth' spaces
@@ -373,6 +373,9 @@ Plug 'pangloss/vim-javascript'
 
 " Vue
 Plug 'posva/vim-vue'
+
+" TypeScript
+Plug 'leafgarland/typescript-vim'
 
   " 
   let g:vue_disable_pre_processors=1

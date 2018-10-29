@@ -283,8 +283,105 @@
 ------------------------------------------------------------------------------
 == Inserting quickly ==
 
+=== Making correcitons ===
+
+* CTRL-W
+* CTRL-U
+
+=== Completion ===
+
+* Completing specific items:
+  * CTRL-X CTRL-F		file names
+  * CTRL-X CTRL-L		whole lines
+  * CTRL-X CTRL-D		macro definitions (also in included files)
+  * CTRL-X CTRL-I		current and included files
+  * CTRL-X CTRL-K		words from a dictionary
+  * CTRL-X CTRL-T		words from a thesaurus
+  * CTRL-X CTRL-]		tags
+  * CTRL-X CTRL-V		Vim command line
+  * CTRL-N          Next match
+  * CTRL-P          Previous match
+* Completing code:
+  * CTRL-X CTRL-O
+
+=== Repeating an insert ===
+
+* CTRL-A repeat last inserted word
+* CTRL-@ repeat last inserted word and exit insert mode
+
+=== Copying from another line ===
+
+* CTRL-Y inserts the character above the cursor
+* CTRL-E inserts the character below the cursor
+
+=== Inserting a register ===
+
+* CTRL-R {register} inserts the contents of the register
+* CTRL-R CTRL-R {register} inserts the contents of the register without
+  interpret special words
+
+=== Abbreviations ===
+
+* :iab #e <Space>***/    #e + <Space> =  ***/
+* :noreabbrev   不重复扩展
+
+=== Entering special characters ===
+
+* CTRL-V key
+* CTRL-V nnn
+* CTRL-V xnn
+* CTRL-V onn
+* CTRL-V unn
+
+=== Digraphs ===
+
+* CTRL-K xx
+* :digraphs   show all digraphs
+* :digraphs xx xx   map xx to xx
+
+=== Normal mode commands ===
+
+* CTRL-O {command}
+
 ------------------------------------------------------------------------------
 == Editing formatted text ==
+
+=== Aligning text ===
+
+* :{range}center [width]
+* :{range}right [width]
+* :{range}left [margin]
+
+=== Indents and tabs ===
+
+* :set tabstop=3
+* :retab 8
+
+=== Dealing with long lines ===
+
+* zh		scroll right
+* 4zh		scroll four characters right
+* zH		scroll half a window width right
+* ze		scroll right to put the cursor at the end
+* zl		scroll left
+* 4zl		scroll four characters left
+* zL		scroll half a window width left
+* zs		scroll left to put the cursor at the start
+
+* g0		to first visible character in this line
+* g^		to first non-blank visible character in this line
+* gm		to middle of this line
+* g$		to last visible character in this line
+
+* gj    move to next screen line
+* gk    move to previous screen line
+
+=== Editing tables ===
+
+* set virtualedit=all
+* set virtualedit=
+* gr
+* gR
 
 ------------------------------------------------------------------------------
 == Repeating ==
