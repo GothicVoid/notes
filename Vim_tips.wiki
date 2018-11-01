@@ -479,6 +479,27 @@
 ------------------------------------------------------------------------------
 == Folding ==
 
+=== Manual folding ===
+
+* zf{motion/tb/v}       fold creation 
+* zo                    open a fold
+* zc                    close a fold
+* zr                    open nested folds
+* zm                    close nested folds
+* zR                    open all folds
+* zM                    close al folds
+* zn                    disable folding
+* zN                    bring back folding
+* zi                    toggle between
+
+=== Working with folds ===
+
+* zo                    打开fold侧栏(set foldcolumn=4)
+  * zO                  open all folds at the cursor line
+  * zC                  close all folds at the cursor line
+  * zd                  delete a fold at the cursor line
+  * zD                  delete all folds at the cursor line
+
 ------------------------------------------------------------------------------
 == Moving through programs ==
 
