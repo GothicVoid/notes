@@ -500,6 +500,18 @@
   * zd                  delete a fold at the cursor line
   * zD                  delete all folds at the cursor line
 
+=== Saving and restoring folds ===
+
+* 手动设置的fold在退出文件后就没了，可用view来保存
+
+=== Folding by indent ===
+
+* set foldmethod=indent
+
+=== Folding with markers ===
+
+* set foldmethod=marker
+
 ------------------------------------------------------------------------------
 == Moving through programs ==
 
