@@ -58,7 +58,7 @@
 	" highlight all matches for the last used search pattern
 	set hls
 	" highlight the screen column of the cursor (local to window)
-	" set cuc
+        set cuc
 	" highlight the screen line of the cursor (local to window)
 	set cul
 	" highlight spelling mistakes (local to window)
@@ -287,17 +287,21 @@ Plug 'dyng/ctrlsf.vim'
 	" open in current buffer
 
 " indent
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 
 	" enable indent guides by default
-	let g:indent_guides_enable_on_vim_startup = 1
+	" let g:indent_guides_enable_on_vim_startup = 1
 
 	" customize the size of the indent guide
 	" only works for soft-tabs(spaces) and not hard-tabs
-	let g:indent_guides_guide_size = 1
+	" let g:indent_guides_guide_size = 1
 
 	" specify a list of filetypes to disable the plugin for
-	let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify', 'gitconfig', 'gitignore']
+	" let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify', 'gitconfig', 'gitignore']
+Plug 'Yggdroot/indentLine'
+        
+        let g:indentLine_bufTypeExclude = ['help', 'terminal', 'startify']
+        let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 
 " file explorer
 Plug 'scrooloose/nerdtree'
