@@ -1,3 +1,13 @@
+""" 
+""" _OPTIONS
+""" _ABBREVIATIONS
+""" _PLUGINS
+"""
+
+"//////////////////////////////////////////////////////////////////////////////"
+
+""" _OPTIONS
+
 "  options in :options
 "==============================================================
 "  1 important
@@ -93,9 +103,9 @@
 " 14 editing text
 
 	" line length above which to break a line (local to buffer)
-	set tw=78
+	set tw=80
 	" margin from the right in which to break a line (local to buffer)
-	set wm=2
+	set wm=0
 	"	specifies what <BS>, CTRL-W, etc. can do in Insert mode
 	set bs=indent,eol,start
 
@@ -140,11 +150,22 @@ packadd! justify	" justifying text.
 " open man in new window
 :runtime! ftplugin/man.vim
 
-" autocomplete html && css
-" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+""" _OPTIONS END
 
-" plugins
+"//////////////////////////////////////////////////////////////////////////////"
+
+""" _ABBREVIATIONS
+
+:iab thsi this
+:iab cosnt const
+:iab #/ <RETURN>////////////////////////////////////////////////////////////////////////////////<RETURN><RETURN>
+
+""" _ABBREVIATIONS END
+
+"//////////////////////////////////////////////////////////////////////////////"
+
+""" _PLUGINS
+
 " plug manager
 " automatic install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -287,19 +308,8 @@ Plug 'dyng/ctrlsf.vim'
 	" open in current buffer
 
 " indent
-" Plug 'nathanaelkane/vim-indent-guides'
-
-	" enable indent guides by default
-	" let g:indent_guides_enable_on_vim_startup = 1
-
-	" customize the size of the indent guide
-	" only works for soft-tabs(spaces) and not hard-tabs
-	" let g:indent_guides_guide_size = 1
-
-	" specify a list of filetypes to disable the plugin for
-	" let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify', 'gitconfig', 'gitignore']
 Plug 'Yggdroot/indentLine'
-        
+
         let g:indentLine_bufTypeExclude = ['help', 'terminal', 'startify']
         let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 
@@ -358,11 +368,15 @@ Plug 'airblade/vim-gitgutter'
 
 " misc
 " Plug 'terryma/vim-multiple-cursors'
+
 " start up menu
 Plug 'mhinz/vim-startify'
+
 " colorscheme
 Plug 'morhetz/gruvbox'
+
 " Plug 'ryanoasis/vim-devicons'
+
 " auto remove search highlight
 Plug 'haya14busa/is.vim'
 
@@ -390,3 +404,5 @@ Plug 'leafgarland/typescript-vim'
 " Initialize plugin system
 call plug#end()
 " use :PlugInstall to install plugins.
+
+""" _PLUGINS END
